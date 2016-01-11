@@ -2,7 +2,7 @@ Template.reactive.onRendered(function() {
   GoogleMaps.load();
 });
 
-var MAP_ZOOM = 12;
+var MAP_ZOOM = 13;
 	
 Template.reactive.helpers({
 	geolocationError: function(){
