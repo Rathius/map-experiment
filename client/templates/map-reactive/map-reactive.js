@@ -2,11 +2,11 @@ Template.reactive.onRendered(function() {
   GoogleMaps.load();
 });
 
-var MAP_ZOOM = 13;
+var MAP_ZOOM = 14;
 	
 Template.reactive.helpers({
 	geolocationError: function(){
-		var error = Geoloaction.erro();
+		var error = Geoloaction.error();
 		return error && error.message;
 	},
 	mapOptions: function() {
@@ -25,15 +25,13 @@ Template.reactive.helpers({
 Template.reactive.onCreated(function() {
 	var self = this;
 	
-	// We can use the `ready` callback to interact with the map API once the map is ready.
 	GoogleMaps.ready('map', function(map) {
-		// Add a marker to the map once it's ready
 		var marker;
 		
 		// Create and move the marker when LatLng changes.
 		self.autorun(function() {
 			var latLng = Geolocation.latLng();
-			if (! latLng)
+			if (! latLng) 
 				return;
 				
 			// If the marker doesn't yet exist, create it.
@@ -49,7 +47,7 @@ Template.reactive.onCreated(function() {
 			}
 			
 			// Center and zoom the map view onto the current position
-			map.instance.setCenter(marker.getpostion());
+			map.instance.setCenter(marker.getPostion());
 			map.instance.setZoom(MAP_ZOOM);
 		});
 	});
