@@ -45,7 +45,7 @@ Template.reactive.onCreated(function() {
 			}
 			// The marker already exists, so we'll just change its position.
 			else {
-				marker.setPostion(latLng);
+				marker.setPosition(latLng);
 			}
 			
 			// Center and zoom the map view onto the current position
