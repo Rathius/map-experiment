@@ -1,8 +1,8 @@
-Template.map.onRendered(function() {
+Template.reactive.onRendered(function() {
   GoogleMaps.load();
 });
 
-var MAP_ZOOM = 15;
+var MAP_ZOOM = 12;
 	
 Template.reactive.helpers({
 	geolocationError: function(){
